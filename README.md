@@ -21,9 +21,9 @@
 ### ⚒️ Project Life Cycle
 > Project Report : [↗️ 프로젝트 보고서](https://north-museum-b07.notion.site/NSL-KDD-1b90f748c6888065b6bae78168b3ae1d?pvs=4)
 >
-> Development Process : [↗️ 개발 페이지](https://github.com/Moomin03/Development_of_an_Anomaly_Detection-System_V2.git)
+> Development Process : [↗️ 깃허브 레퍼지토리](https://github.com/Moomin03/Development_of_an_Anomaly_Detection_System_V2/tree/master)
 >
-> Model Deployment : [↗️ 훈련된 모델 바로 사용하기](https://north-museum-b07.notion.site/NSL-KDD-1b90f748c6888065b6bae78168b3ae1d?pvs=4)
+> Model Deployment : [↗️ 개발 페이지 바로가기](https://github.com/Moomin03/Development_of_an_Anomaly_Detection_System_V2/blob/master/process/prcatice.ipynb)
 
 
 ### ⚒️ Project Introduction
