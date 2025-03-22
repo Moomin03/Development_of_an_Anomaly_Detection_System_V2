@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>ThreatLens_V2</title>
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+
+    <div class="introduce">
+            <img src="https://github.com/Moomin03/Development_of_an_Anomaly_Detection-System/raw/master/LOGO.jpg" alt="program_image">
+            <a href="https://hits.seeyoufarm.com">
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMoomin03%2FDevelopment_of_an_Anomaly_Detection-System%2F&count_bg=%2379C83D&title_bg=%23555555&icon=jupyter.svg&icon_color=%23E7E7E7&title=ThreatLens_V2&edge_flat=True" alt="Hits" class="visit">
+            </a>
+            <p class="description">ThreatLens_V2는 NSL-KDD 데이터를 통해 학습된 인공지능 모델로 악성 IP를 사전에 차단하는 도구입니다.<br> 이를 통해서 사용자는 해당 IP에 대한 공격을 미리 예측하고, 차단함으로써 네트워크 트래픽 문제등 다양한 사이버 범죄를 예방할 수 있습니다.<br>Zeek를 사용해서 네트워크 트래픽 로그를 수집하고, ThreatLens에게 분석을 의뢰해보세요!</p>
+    </div>
+    <!-- 파일 업로드 기능을 위한 컨테이너 -->
+    <div class="file-upload-container">
+        <!-- 전체 디자인을 위한 내부 컨테이너 -->
+        <div class="container">
+            <!-- 파일 업로드 폼 -->
+            <form id="upload-form" method="post" enctype="multipart/form-data" action="{% url 'upload_file' %}">
+                {% csrf_token %}
+                <div class="file-buttons">
+                    <input type="file" id="file-input" name="file" accept=".log" class="file-input" multiple hidden>
+                    <button type="button" id="select-button" class="file-button select-button">파일 선택</button>
+                    <button type="submit" id="upload-button" class="file-button upload-button" disabled>결과보기</button>
+                    <button type="button" id="remove-button" class="file-button remove-button" disabled>파일 제거</button>
+                </div>
+                <p id="file-name" class="file-name italic">There are no selected files!</p>
+            </form>
+        </div>
+    </div>
+    <div class="result-container">
+        {% if file_content %}
+            {% for line in file_content.splitlines %}
+                {{ line }} <br> ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ <br>
+            {% endfor %}
+        {% else %}
+            <p class="not_update">로그파일이 아직 업로드되지 않았습니다.</p>
+        {% endif %}
+    </div>
+
+    <script src="{% static 'js/test.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* styles.css */
+/* 기본 설정 및 버튼 디자인 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    background-color: #ffffff; /* 배경색 설정 */
+}
+
+
+/* 버튼 그룹 내에서 버튼 간 간격 설정 */
+.file-buttons {
+    display: flex; /* Flexbox 사용 */
+    gap: 10px; /* 버튼 간 간격 */
+}
+
+/* 기본 버튼 스타일링 */
+.file-button {
+    padding: 10px 20px; /* 버튼 패딩 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 모서리 */
+    font-size: 16px; /* 폰트 크기 */
+    cursor: pointer; /* 커서가 버튼처럼 보이도록 설정 */
+    transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+/* 비활성화된 버튼 스타일링 */
+.file-button:disabled {
+    background-color: #cccccc; /* 비활성화 상태의 배경색 */
+    cursor: not-allowed; /* 비활성화 상태의 커서 */
+}
+
+/* 비활성화된 버튼은 호버 효과가 적용되지 않도록 하기 위해 
+   hover 상태에서도 효과가 없게 설정 */
+.file-button:disabled:hover {
+    background-color: #cccccc; /* 비활성화된 상태에서 호버 색상 유지 */
+}
+
+/* 각 버튼의 색상 및 호버 효과 */
+
+/* 파일 선택 버튼 */
+.select-button {
+    background-color: #007BFF; /* 파란색 배경 */
+    color: white; /* 텍스트 색상: 흰색 */
+}
+
+/* 파일 선택 버튼 호버 효과 */
+.select-button:hover {
+    background-color: #0056b3; /* 호버 시 어두운 파란색 */
+}
+
+/* 업로드 버튼 */
+.upload-button {
+    background-color: #28a745; /* 초록색 배경 */
+    color: white; /* 텍스트 색상: 흰색 */
+}
+
+/* 업로드 버튼 호버 효과 */
+.upload-button:hover {
+    background-color: #218838; /* 호버 시 진한 초록색 */
+}
+
+/* 파일 제거 버튼 */
+.remove-button {
+    background-color: #dc3545; /* 빨간색 배경 */
+    color: white; /* 텍스트 색상: 흰색 */
+}
+
+/* 파일 제거 버튼 호버 효과 */
+.remove-button:hover {
+    background-color: #c82333; /* 호버 시 진한 빨간색 */
+}
+
+/* 선택된 파일 이름 */
+.file-name {
+    font-size: 18px; /* 텍스트 크기 */
+    color: #333333; /* 텍스트 색상: 어두운 회색 */
+    margin-left: 20px; /* 파일 이름과 버튼 사이의 간격 */
+}
+
+/* 이탤릭 스타일 */
+.file-name.italic {
+    font-style: italic; /* 이탤릭 폰트 설정 */
+    color: #888888; /* 이탤릭 상태에서의 색상 */
+}
+
+/* 내부 컨테이너 스타일링 */
+.container {
+    background-color: white; /* 배경색: 흰색 */
+    padding: 20px; /* 패딩 */
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.result {
+    border: 1px solid #000; /* Optional: Add a border */
+    padding: 10px; /* Optional: Add padding */
+    max-width: 80%; /* Adjust as needed */
+    max-height: 80%; /* Adjust as needed */
+    overflow: auto; /* Ensure content does not overflow */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.file-upload-container {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* 결과 상자 크기 조정 */
+.result-container {
+    position: absolute;
+    top: 80%; /* 기존 80%에서 75%로 조정하여 바닥과 간격 추가 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* 전체 너비로 확장 */
+    height: 70%; /* 뷰포트 높이에 비례하게 높이 설정 */
+    text-align: left;
+    max-width: 1200px; /* 최대 너비 1200px로 제한 */
+    overflow-y: auto; /* 세로 스크롤 추가 */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    }
+
+/* 파일 내용에 구분선 추가 */
+pre {
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+    word-wrap: break-word; /* 단어가 길면 줄바꿈 */
+    overflow-wrap: break-word;
+    font-size: 14px; /* 텍스트 크기 */
+    line-height: 1.5; /* 줄 간격을 조금 넓혀서 가독성 높임 */
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 20px auto 0 auto;
+}
+.description {
+    text-align: center;
+}
+.visit {
+    width: 200px;
+    height:25px;
+}
