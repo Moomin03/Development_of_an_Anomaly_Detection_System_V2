@@ -57,12 +57,38 @@ For building and running the application you need:
 
 ## ⚒️ Installation
 ```
+# 저장될 파일을 만들어줘요!
 ubuntu@ubuntu : mkdir 파일이름 
 ubuntu@ubuntu : cd 파일이름
 ubuntu@ubuntu: git clone https://github.com/Moomin03/Development_of_an_Anomaly_Detection-System_V2.git
 ubuntu@ubuntu : cd Development_of_an_Anomaly_Detection-System_V2/
+
+# 가상환경을 구축하고, requirement을 설치해요!
+ubuntu@ubuntu : python -m venv 가상환경 이름
 ubuntu@ubuntu : pip install -r requirements.txt
+
+# 서버를 실행할거에요!
+# 브라우저에서 localhost:8000/main_page로 접속해야해요(main_page만 구축되어있어요 ㅠ)!
 ubuntu@ubuntu : cd program
 ubuntu@ubuntu : python manage.py runserver
+
+# 로그 데이터 준비 (우리는 Zeek(https://zeek.org/)를 사용할거에요!)
+# 의존 패키지 설치
+ubuntu@ubuntu : sudo apt install -y cmake make gcc g++ flex bison libpcap-dev \
+    libssl-dev python3-dev swig zlib1g-dev
+    
+# Zeek 컴파일 및 설치
+ubuntu@ubuntu : sudo apt install -y zeek
+ubuntu@ubuntu : ./configure --prefix=/opt/zeek
+ubuntu@ubuntu : make -j$(nproc) 
+ubuntu@ubuntu : sudo make install
+ubuntu@ubuntu : zeek --version(실행이 되지 않는 경우 아래 명령어를 작성해주세요!)
+ubuntu@ubuntu : /opt/zeek/bin/zeek --version
+
+# Log 데이터 수집하기 (라우터에 유선으로 연결한 후에, 포트미러링을 진행하면 라우터에 쌓이는 로그들을 수집할 수 있습니다.)
+ubuntu@ubuntu : sudo zeek -i 인터넷망(eth0 / conn.log 수집 -> 명령어 오류시 아래 명령어로 작성해주세요.)
 ubuntu@ubuntu : sudo /opt/zeek/bin/zeek -i 접속된 인터넷망(eth0 / conn.log 수집)
+
+# 다음에 수집된 로그 데이터를 웹페이지 파일 올리기에 올려주시면 됩니다.
+ubuntu@ubuntu : ls
 ```
