@@ -55,7 +55,7 @@ For building and running the application you need:
 - other : ./requirements.txt
 
 
-## ⚒️ Installation
+## ⚒️ How to Install?
 ```
 # 저장될 파일을 만들어줘요!
 ubuntu@ubuntu : mkdir 파일이름 
@@ -92,3 +92,7 @@ ubuntu@ubuntu : sudo /opt/zeek/bin/zeek -i 접속된 인터넷망(eth0 / conn.lo
 # 다음에 수집된 로그 데이터를 웹페이지 파일 올리기에 올려주시면 됩니다.
 ubuntu@ubuntu : ls
 ```
+
+## ⚒️ Project Map
+
+![image](https://github.com/Moomin03/Development_of_an_Anomaly_Detection_System_V2/blob/master/image/Project_Map.png)
